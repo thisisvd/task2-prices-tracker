@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Real-Time Prices Tracker</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="prices">Prices</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="use_biometric">Use Biometric</string>
+    <string name="coin_id">Coin ID:</string>
+    <string name="category">Category:</string>
+    <string name="price">Price:</string>
+    <string name="or">or</string>
+    <string name="search">Search</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.task2_prices_tracker.ui.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_pricesFragment"
+            app:destination="@id/pricesFragment"
+            app:enterAnim="@anim/slide_left_animation"
+            app:exitAnim="@anim/wait_animation"
+            app:popEnterAnim="@anim/wait_animation"
+            app:popExitAnim="@anim/slide_right_animation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pricesFragment"
+        android:name="com.example.task2_prices_tracker.ui.prices.PricesFragment"
+        android:label="@string/prices"
+        tools:layout="@layout/fragment_prices" />
+
+</navigation>
