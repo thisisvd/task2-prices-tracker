@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Task 1: API Integration with Transactions
+  Task 2: Real-Time Prices Tracker
   <br>
 </h1>
 
@@ -14,13 +14,15 @@
 </p>
 
 ## Project Overview
-The above project has been a task part for the tasks provided in the assignment [PDF](https://github.com/thisisvd/task1-api-transactions/blob/master/support/Android%20Development%20Assessment%20Tasks.pdf). The application contains 2 screens. One is the login screen in which the user will provide a username and password, and on pressing login, it will get a token, which will be saved securely in shared preferences, and they will be navigated to the next fragment, which is the transaction list fragment, which contains a list of transactions with 2 menu items: one to search for the items based on description, amount, date, or category, and the second is to log out, clicking on which clears the token. When the token is saved and the user launches an app, the biometric login will be called back to, and success will redirect to the transaction list fragment, and unsuccessful will close the biometric prompt and will allow the user to log in via username and password. The application also stores the transaction data in the DB using the ROOM. So, when the network is unavailable, it will fetch the data from the local DB. Used clean architecture for the project's modules and injected dependencies using Dagger-Hilt. Retrofit for the networking library, Timber for logging, and, of course, as stated, used Java for the application.
+The above project has been a task part for the Second tasks provided in the assignment [PDF](https://github.com/thisisvd/task1-api-transactions/blob/master/support/Android%20Development%20Assessment%20Tasks.pdf). The application contains 2 screens. One is the login screen in which the user will provide a username and password, and on pressing login, it will get a token, which will be saved securely in shared preferences, and they will be navigated to the next fragment, which is the Prices list fragment, which contains a list of prices data fetch form api (https://api.prepstripe.com/prices) with 2 menu items: one to search for the items based  on name, price, or change, and the second is to log out, clicking on which clears the token. When the token is saved and the user launches an app, the biometric login will be called back to, and success will redirect to the price list fragment, and unsuccessful will close the biometric prompt and will allow the user to log in via username and password. The application also stores the prices data in the DB using the ROOM. So, when the network is unavailable, it will fetch the data from the local DB. Used clean architecture for the project's modules and injected dependencies using Dagger-Hilt. Retrofit for the networking library, Timber for logging, and, of course, as stated, used Java for the application.
+
+- Firebase (FCM) and MP-Android charts hadn't been used as there was not much information provided in the tasks.
 
 ## Setup Instructions
 
  - Clone the project on your system.
 ```bash
-git clone https://github.com/thisisvd/task1-api-transactions.git
+git clone https://github.com/thisisvd/task2-prices-tracker.git
 ```
 - Sync the project -> Clean Project -> then build it and run it on your appropiate android device.
 
@@ -36,8 +38,8 @@ git clone https://github.com/thisisvd/task1-api-transactions.git
 
 ## Bonus features implemented
 - ✅ `Dark Mode:` Added dark mode, which will automatically change according to the device theme.
-- ✅ `Offline Mode (using Room Database):` Implemented a ROOM database that stores the transactions and provides transactions when the network is unavailable.
-- ✅ `Search/Filter functionality:` Implemented a search functionality when entering a string that will filter the transaction list based on description, amount, date, and category.
+- ✅ `Offline Mode (using Room Database):` Implemented a ROOM database that stores the prices and provides stored prices when the network is unavailable.
+- ✅ `Search/Filter functionality:` Implemented a search functionality when entering a string that will filter the coin or prices list based on name, price, and change.
   
 ## Source Code
 - `Tech-stack used:` Java, DI(Hilt), Retrofit, Security Crypto, Biometric, ROOM, Timber etc. 
@@ -53,8 +55,8 @@ task2_prices_tracker
 │── data
 │   ├── local
 │   │   ├── room
-│   │   │   ├── TransactionDao
-│   │   │   └── TransactionDatabase
+│   │   │   ├── PricesDao
+│   │   │   └── PricesDatabase
 │   │   └── EncryptedSharedPreference
 │   ├── network
 │   │   ├── Api
@@ -65,16 +67,16 @@ task2_prices_tracker
 │   ├── DatabaseModule
 │   └── NetworkModule
 │── domain
-│   ├── Transactions
+│   ├── Prices
 │   ├── User
 │   └── UserResponse
 │── ui
 │   ├── adapter
-│   │   └── TransactionsAdapter
+│   │   └── PricesAdapter
 │   ├── login
 │   │   └── LoginFragment
-│   ├── transactions
-│   │   └── TransactionsFragment
+│   ├── prices
+│   │   └── PricesFragment
 │   ├── viewmodel
 │   │   └── MainViewModel
 │   └── MainActivity
@@ -85,4 +87,4 @@ task2_prices_tracker
 ```
 
 ## Released Apk
-- Released Application path can be found [here!](https://github.com/thisisvd/task1-api-transactions/tree/master/app/release).
+- Released Application path can be found [here!](https://github.com/thisisvd/task2-prices-tracker/tree/master/app/release).
